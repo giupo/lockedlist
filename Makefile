@@ -43,7 +43,7 @@ list:
 	@echo $(SRC_FILES)
 
 coverage:
-  $(R_SCRIPT) -e 'covr::package_coverage(path=".")'
+	$(R_SCRIPT) -e 'covr::package_coverage(path=".")'
 
 codecov:
 	$(R_SCRIPT) -e 'covr::codecov(path=".")'
