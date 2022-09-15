@@ -5,3 +5,4 @@
 ^\.gitchangelog\.rc$
 .*\.tar.gz$
 ^cran-comments\.md$
+^\.github$
