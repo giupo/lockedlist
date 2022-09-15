@@ -12,7 +12,7 @@ SRC_FILES := $(wildcard src/*) $(addprefix src/, $(COPY_SRC))
 PKG_FILES := DESCRIPTION NAMESPACE $(R_FILES) $(SRC_FILES)
 PKG_FILE := $(PKG_NAME)_$(PKG_VERSION).tar.gz
 
-.PHONY: NAMESPACE list autotest coverage changelog NEWS.md
+.PHONY: NAMESPACE list coverage changelog NEWS.md coverage
 
 tarball: $(PKG_FILE)
 
@@ -44,11 +44,8 @@ list:
 	@echo "Source files:"
 	@echo $(SRC_FILES)
 
-autotest:
-	$(R_SCRIPT) autotest.r
-
 coverage:
-	GRAFODB_ENV=test $(R_SCRIPT) -e 'covr::package_coverage(path=".")'
+  $(R_SCRIPT) -e 'covr::package_coverage(path=".")'
 
 test:
 	$(R_SCRIPT) -e 'devtools::test()'
