@@ -3,3 +3,4 @@
 ^\.bumpversion\.cfg$
 ^Makefile$
 ^\.gitchangelog\.rc$
+.*\.tar.gz$

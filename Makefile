@@ -12,18 +12,17 @@ SRC_FILES := $(wildcard src/*) $(addprefix src/, $(COPY_SRC))
 PKG_FILES := DESCRIPTION NAMESPACE $(R_FILES) $(SRC_FILES)
 PKG_FILE := $(PKG_NAME)_$(PKG_VERSION).tar.gz
 
-.PHONY: NAMESPACE list coverage changelog NEWS.md coverage
+.PHONY: list coverage changelog NEWS.md coverage
 
 tarball: $(PKG_FILE)
 
 $(PKG_FILE): $(PKG_FILES)
 	$(R_EXEC) --vanilla CMD build .
 
-build: $(PKG_FILES)
-	$(R_SCRIPT) -e 'devtools::build()'
+build: tarball
 
-check:
-	$(R_SCRIPT) -e 'devtools::check()'
+check: ${PKG_FILE}
+	$(R_EXEC) CMD check ${PKG_FILE}
 
 install: $(PKG_FILE)
 	$(R_EXEC) --vanilla CMD INSTALL $(PKG_FILE)
