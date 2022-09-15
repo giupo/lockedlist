@@ -1,0 +1,5 @@
+^LICENSE\.md$
+^\.editorconfig$
+^\.bumpversion\.cfg$
+^Makefile$
+^\.gitchangelog\.rc$
