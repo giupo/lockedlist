@@ -2,7 +2,7 @@ Package: lockedlist
 Title: A locked thread safe container
 Version: 0.0.2
 Authors@R:
-    person("Giuseppe", "Acito", , "giuseppe.acito@gmail.com", role = c("aut", "cre"),
+    person("Giuseppe", "Acito", , "giuseppe.acito@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-9696-6798"))
 Description: The package implements a locked list to access the same dataset from different process/threads.
 License: MIT + file LICENSE
@@ -17,7 +17,8 @@ Config/testthat/edition: 3
 Imports:
     filelock,
     qs,
-    rutils
+    rutils,
+	R6
 Remotes: github::giupo/rutils
 BugReports: https://github.com/giupo/lockedlist/issues
 URL: https://github.com/giupo/lockedlist

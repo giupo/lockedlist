@@ -35,7 +35,6 @@ clean:
 	-rm -r -f $(PKG_NAME).Rcheck
 	-rm -r -f man/*
 	-rm -f src/*.so src/*.o
-# -rm -r -f NAMESPACE
 
 list:
 	@echo "R files:"
@@ -45,6 +44,9 @@ list:
 
 coverage:
   $(R_SCRIPT) -e 'covr::package_coverage(path=".")'
+
+codecov:
+	$(R_SCRIPT) -e 'covr::codecov(path=".")'
 
 test:
 	$(R_SCRIPT) -e 'devtools::test()'
