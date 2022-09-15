@@ -20,3 +20,4 @@ Imports:
     rutils
 Remotes: github::giupo/rutils
 BugReports: https://github.com/giupo/lockedlist/issues
+URL: https://github.com/giupo/lockedlist
