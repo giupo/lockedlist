@@ -1,6 +1,6 @@
 Package: lockedlist
 Title: A locked thread safe container
-Version: 0.0.2
+Version: 0.0.3
 Authors@R:
     person("Giuseppe", "Acito", , "giuseppe.acito@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-9696-6798"))
